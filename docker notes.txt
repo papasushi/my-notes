@@ -25,3 +25,6 @@ BUILD WITH TAGS:
 	docker build -t papasushi/ansible:latest .
 PUSH TO DOCKERHUB:
 	docker push papasushi/ansible:latest
+
+
+=====================
