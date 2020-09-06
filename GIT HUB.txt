@@ -4,3 +4,4 @@ GIT VERSION
 
     git --version
 
+GIT CLONE
