@@ -1,0 +1,7 @@
+GIT HUB Commands
+
+GIT VERSION
+
+    git --version
+
+GIT CLONE

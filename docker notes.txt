@@ -1,0 +1,40 @@
+list all images that are locally stored with docker engine
+	docker image ls
+
+List the running containers (add --all to include stopped containers) 
+	docker container ls 
+
+Delete all running and stopped containers 
+	docker container rm -f $(docker ps -aq)
+
+Print the last 100  lines of a container’s logs 
+	docker container logs --tail 100 web	
+
+start docker image:
+	docker run -d -p 80:80 docker/getting-started
+	docker run -dp 80:80 --name getstarted docker/getting-started
+
+start container interactive and remove on exit:
+	docker run -it --rm ansible
+
+build docker image for ansible:
+	docker build -t ansible:latest .
+
+dockerfile
+	===========================
+	FROM centos:centos7.7.1908 
+	RUN yum check-update;  yum install -y gcc libffi-devel python3 epel-release; yum install -y openssh-	clients;  pip3 install --upgrade pip; pip3 install ansible
+	===============================================
+
+start container interactive and remove it and mount current directory to ansible and set as working directory:
+	docker run -it --rm --volume "$(PWD):/ansible" --workdir /ansible ansible
+
+SIGN INTO DOCKERHUB:
+	docker login --username <DockerHub-UserName>
+BUILD WITH TAGS:
+	docker build -t papasushi/ansible:latest .
+PUSH TO DOCKERHUB:
+	docker push papasushi/ansible:latest
+
+
+=====================

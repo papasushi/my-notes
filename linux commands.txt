@@ -1,0 +1,31 @@
+LINUX VERSION:
+https://www.cyberciti.biz/faq/command-to-show-linux-version/
+	uname -a
+
+    2.6.32-23 – Linux kernel version number
+    pae – pae kernel type indicate that I’m accssing more than 4GB ram using 32 bit kernel.
+    SMP – Kernel that supports multi core and multiple cpus.
+
+	cat /proc/version 
+	cat /etc/*release
+
+UBUNTU UPDATE:
+Fetch the update for all your repositories for all your apps to all the latest updates lists.
+	sudo apt-get update
+
+Then run the upgrade command to upgrade all the packages to latest available versions.
+	sudo apt-get upgrade
+
+Now run dist-upgrade which intelligently handles changing dependencies with new versions of packages. It also removes obsolete packages form your system.
+
+	sudo apt-get dist-upgrade
+
+DISK SPACE:
+	df -h
+
+ENVIRONMENT VARIABLES:
+	printenv
+	https://www.cyberciti.biz/faq/linux-list-all-environment-variables-env-command/
+
+
+this is an end of file note
