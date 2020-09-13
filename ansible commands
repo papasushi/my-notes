@@ -1,0 +1,20 @@
+ansible localhost -m ping
+## The ping module tests connectivity. It does not use ICMP and requires Python on the remotenode. It does not require any additional arguments.
+
+ansible localhost -m stat -a "path=/ansible"
+## The stat module retrieves facts about the /ansible directory. This module is similar to the Linux/Unit stat command.
+
+ansible localhost -m copy -a "src=/ansible/info.md dest=/ansible/to-dos.md"
+## copy files
+
+ansible localhost -m replace -a "path=/ansible/to-dos.md regexp='^\[\s' replace='[x'"
+## Replace text in a file
+
+ansible localhost -m debug -a "msg={{lookup('file', '/ansible/to-dos.md') }}"
+## Lookup the contents of a file
+
+ansible localhost -m file -a "path=/ansible/to-dos.md state=absent"
+## Remove file
+
+Modules: https://docs.ansible.com/ansible/latest/modules/modules_by_category.html
+
